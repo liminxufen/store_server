@@ -1,0 +1,61 @@
+mysql: demo:@tcp(127.0.0.1:3306)/test?charset=utf8&parseTime=True&loc=Local
+other_mysql: demo:@tcp(127.0.0.1:3306)/other_test?charset=utf8&parseTime=True&loc=Local
+
+http:
+    listen: :9881
+    debug: true    
+
+mongodb:
+    host: 127.0.0.1
+    port: 80
+    db_name: test
+    user: test_user
+    passwd: test_test
+    time_out: 30
+    pool_size: 100
+    direct: false
+
+rpc_port: 9882       
+
+ip_white_list: 127.0.0.1
+
+influxdb:
+    host: 127.0.0.1
+    port: 9096   
+    database: test
+    measurement: test
+
+es:
+    address: ["http://127.0.0.1:9200"]
+    flush_interval: 30s    
+    sniff: false    
+    disable_sync: false     
+    timeout: 5000
+    type:
+    index:
+    auth:
+        username:
+        password:
+
+es7:
+    address: ["http://127.0.0.1:9200"]
+    flush_interval: 30s    
+    sniff: false    
+    disable_sync: false     
+    timeout: 10000
+    index:    
+    type:
+    auth:
+        username: 
+        password:
+
+dataplatform_search: 
+    api: 
+
+cls:
+    secret_id: 
+    secret_key:
+    region: 
+    topic_id: 
+    open: true
+    async: true

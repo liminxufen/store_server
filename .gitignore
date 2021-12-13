@@ -1,0 +1,9 @@
+bin
+.idea/*
+vendor/github.com/*
+*.swp
+vendor/vendor.json
+
+configs.tgz
+track_404_repair_auto.py
+

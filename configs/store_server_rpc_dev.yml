@@ -1,0 +1,16 @@
+mysql: test:@tcp(127.0.0.1:3306)/test?charset=utf8&parseTime=True&loc=Local
+
+mongodb:
+    host: 127.0.0.1
+    port: 80
+    db_name: test
+    user: test_user
+    passwd: test_test
+    time_out: 30
+    pool_size: 100
+    direct: false
+
+rpc:
+    listen: :9882
+    debug: true    
+

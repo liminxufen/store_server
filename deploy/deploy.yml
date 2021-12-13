@@ -1,0 +1,79 @@
+---
+- hosts: localhost
+  gather_facts: no
+  vars:
+      gituser: joox_code_helper
+      build_dir: '/tmp/build_{{ project }}'
+
+  tasks:
+      #- name: update config
+      #- shell: "[[ -e .git ]] && git pull"
+      #- args:
+      #-   chdir: ../configs
+
+    - name: clear tmp project file
+      file:
+        path: '/tmp/{{ project }}'
+        state: absent
+
+    - name: clear tmp build file
+      file:
+        path: '{{ build_dir }}'
+        state: absent
+
+    - name: clone code
+      git:
+        repo: http://github.com/store_server.git
+        dest: '/tmp/{{ project }}/src/store_server_http'
+        version: '{{ check_out }}'
+        depth: 10
+
+    - name: building
+      shell: |
+             export GOPATH=/tmp/{{project}}:/data/erichli/projects/
+             /usr/local/bin/git fetch --depth=500 && gopack -n {{ project }} -u {{ build_dir }}
+      args:
+         chdir: '/tmp/{{ project }}/src/store_server_http/cmd/{{ project }}'
+
+
+#- hosts: '{{ env }}'
+- hosts: localhost
+  vars:
+    user: 'root'
+    build_dir: '/tmp/build_{{ project }}'
+    deploy_dir: '/tmp/deploy_{{ project }}'
+    work_dir: '/data/apps/{{ project }}'
+    video_upload_dir: '/data/apps/media_storage_{{ env }}/upload_videos'    
+    audio_upload_dir: '/data/apps/media_storage_{{ env }}/upload_audios'
+    static_dir: '/data/apps/media_storage_{{ env }}/media_covers'    
+
+  tasks:
+
+    - name: remove dir
+      shell: rm -rf {{ deploy_dir }} || /bin/true
+
+    - name: transfer build rpm
+      copy:
+        src: "{{ build_dir }}"
+        dest: "{{ deploy_dir }}"
+
+    - name:
+      shell: find .  -name "*.amd64.rpm" -exec rpm -ivh --force {} \;
+      args:
+        chdir: '{{ deploy_dir }}'
+
+    - name: copy src conf
+      copy:
+        src=/data/erichli/projects/src/store_server/configs
+        dest={{ work_dir }}/
+
+    - name: copy config
+      copy:
+        src: '{{ work_dir }}/configs/{{ project }}_{{ env }}.yml'
+        dest: '{{ work_dir }}/conf/{{ project }}.yml'
+    
+    - name: restart servervice
+      shell: setsid service {{ project }} restart
+      register: restart_service
+
+    - debug: msg="{{ restart_service }}"
