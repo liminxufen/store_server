@@ -4,6 +4,11 @@ import (
 	"bytes"
 	"context"
 	"fmt"
+	"net/http"
+	"strings"
+	"testing"
+	"time"
+
 	"github.com/fvbock/endless"
 	"github.com/gorilla/mux"
 	"github.com/gorilla/rpc"
@@ -11,16 +16,13 @@ import (
 	"github.com/store_server/dbtools/driver"
 	"github.com/store_server/dbtools/models"
 	"github.com/store_server/logger"
-	log "github.com/store_server/logger"
 	"github.com/store_server/store_server_rpc/conf"
 	"github.com/store_server/store_server_rpc/g"
-	lm "github.com/store_server/store_server_rpc/rpc/common"
 	"github.com/store_server/utils/common"
 	"github.com/stretchr/testify/assert"
-	"net/http"
-	"strings"
-	"testing"
-	"time"
+
+	log "github.com/store_server/logger"
+	lm "github.com/store_server/store_server_rpc/rpc/common"
 )
 
 var (

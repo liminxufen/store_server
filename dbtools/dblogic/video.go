@@ -2,11 +2,13 @@ package dblogic
 
 import (
 	"fmt"
-	"github.com/store_server/dbtools/driver"
-	m "github.com/store_server/dbtools/models"
-	"github.com/store_server/logger"
 	"sync"
 	"time"
+
+	"github.com/store_server/dbtools/driver"
+	"github.com/store_server/logger"
+
+	m "github.com/store_server/dbtools/models"
 )
 
 //JOOX CMS VIDEO相关操作

@@ -14,11 +14,11 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-
-	es "github.com/store_server/dbtools/elastic"
 	"github.com/store_server/logger"
 	"github.com/store_server/metrics"
 	"github.com/store_server/store_server_http/g"
+
+	es "github.com/store_server/dbtools/elastic"
 )
 
 var (

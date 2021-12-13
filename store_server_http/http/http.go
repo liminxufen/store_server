@@ -4,6 +4,10 @@ package http
 import (
 	"context"
 	"fmt"
+	_ "net/http/pprof" //初始化pprof
+	"strings"
+	"time"
+
 	"github.com/DeanThompson/ginpprof"
 	"github.com/fvbock/endless"
 	"github.com/getsentry/sentry-go"
@@ -11,14 +15,12 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/store_server/logger"
-	log "github.com/store_server/logger"
 	"github.com/store_server/store_server_http/g"
 	"github.com/store_server/store_server_http/kits"
 	"github.com/store_server/store_server_http/op"
 	"github.com/zsais/go-gin-prometheus"
-	_ "net/http/pprof" //初始化pprof
-	"strings"
-	"time"
+
+	log "github.com/store_server/logger"
 )
 
 var (

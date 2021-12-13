@@ -3,12 +3,11 @@ package driver
 import (
 	"context"
 	"database/sql"
+	"sync"
 
 	"github.com/jinzhu/gorm"
-	"go.mongodb.org/mongo-driver/mongo"
-
 	"github.com/store_server/logger"
-	"sync"
+	"go.mongodb.org/mongo-driver/mongo"
 )
 
 //JOOX CMS DB驱动封装

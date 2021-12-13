@@ -7,11 +7,12 @@ import (
 	"time"
 
 	"github.com/getsentry/sentry-go"
-	log "github.com/store_server/logger"
 	"github.com/store_server/store_server_rpc/g"
-	rpc "github.com/store_server/store_server_rpc/rpc/rpcServer"
 	"github.com/store_server/utils"
 	"github.com/store_server/utils/common"
+
+	log "github.com/store_server/logger"
+	rpc "github.com/store_server/store_server_rpc/rpc/rpcServer"
 )
 
 var (

@@ -2,10 +2,11 @@ package common
 
 import (
 	"fmt"
-	"github.com/store_server/logger"
 	"reflect"
 	"runtime"
 	"time"
+
+	"github.com/store_server/logger"
 )
 
 func Routine(i interface{}, interval time.Duration, logger *logger.JLoggerEntry) { //间隔interval执行方法

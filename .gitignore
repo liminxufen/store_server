@@ -5,5 +5,4 @@ vendor/github.com/*
 vendor/vendor.json
 
 configs.tgz
-track_404_repair_auto.py
 

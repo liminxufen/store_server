@@ -4,8 +4,9 @@ import (
 	"testing"
 
 	"github.com/store_server/dbtools/driver"
-	m "github.com/store_server/dbtools/models"
 	"github.com/stretchr/testify/assert"
+
+	m "github.com/store_server/dbtools/models"
 )
 
 var (

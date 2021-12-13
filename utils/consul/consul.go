@@ -6,14 +6,15 @@ import (
 	"context"
 	"crypto/md5"
 	"fmt"
-	"github.com/hashicorp/consul/api"
-	"github.com/store_server/logger"
 	"io/ioutil"
 	"os"
 	"path/filepath"
 	"strings"
 	"sync"
 	"time"
+
+	"github.com/hashicorp/consul/api"
+	"github.com/store_server/logger"
 )
 
 //consul driver

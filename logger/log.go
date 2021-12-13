@@ -15,11 +15,12 @@ import (
 	"sync"
 	"time"
 
-	rotatelogs "github.com/lestrrat-go/file-rotatelogs"
 	"github.com/opentracing/opentracing-go"
 	"github.com/sirupsen/logrus"
 	"github.com/uber/jaeger-client-go"
 	"golang.org/x/crypto/ssh/terminal"
+
+	rotatelogs "github.com/lestrrat-go/file-rotatelogs"
 )
 
 // Define log level string

@@ -1,9 +1,10 @@
 package common
 
 import (
-	"github.com/spaolacci/murmur3"
 	"math"
 	"sync"
+
+	"github.com/spaolacci/murmur3"
 )
 
 const (

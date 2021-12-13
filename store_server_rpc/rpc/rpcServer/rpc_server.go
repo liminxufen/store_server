@@ -2,6 +2,8 @@ package rpcServer
 
 import (
 	"context"
+	"time"
+
 	"github.com/fvbock/endless"
 	"github.com/getsentry/sentry-go"
 	"github.com/gorilla/mux"
@@ -9,9 +11,9 @@ import (
 	"github.com/gorilla/rpc/json"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/store_server/logger"
-	log "github.com/store_server/logger"
 	"github.com/store_server/store_server_rpc/g"
-	"time"
+
+	log "github.com/store_server/logger"
 )
 
 func flushSentry(ctx context.Context) {

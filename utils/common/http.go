@@ -3,12 +3,13 @@ package common
 import (
 	"bytes"
 	"context"
-	"github.com/store_server/utils/errors"
-	"github.com/store_server/utils/requests"
-	"github.com/store_server/utils/rest"
 	"io/ioutil"
 	"net/http"
 	"strings"
+
+	"github.com/store_server/utils/errors"
+	"github.com/store_server/utils/requests"
+	"github.com/store_server/utils/rest"
 )
 
 func DoPostRequest(ctx context.Context, url string, data []byte, rsp interface{},

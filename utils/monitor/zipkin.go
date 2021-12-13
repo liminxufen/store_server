@@ -2,8 +2,8 @@ package monitor
 
 import (
 	"context"
-	//zipkin "github.com/openzipkin/zipkin-go"
 	"sync"
+	//zipkin "github.com/openzipkin/zipkin-go"
 )
 
 //zipkin driver

@@ -4,18 +4,20 @@ import (
 	"context"
 	"database/sql"
 	"fmt"
+	"os"
+	"sync"
+	"time"
+
 	"github.com/jinzhu/gorm"
-	_ "github.com/jinzhu/gorm/dialects/mysql" //初始化mysql driver
 	"github.com/store_server/dbtools/models"
 	"github.com/store_server/logger"
-	log "github.com/store_server/logger"
 	"github.com/store_server/utils/common"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
-	"os"
-	"sync"
-	"time"
+
+	_ "github.com/jinzhu/gorm/dialects/mysql" //初始化mysql driver
+	log "github.com/store_server/logger"
 )
 
 var getEnvOrDefault = common.GetEnvOrDefault

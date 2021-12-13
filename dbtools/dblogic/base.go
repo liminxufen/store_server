@@ -3,11 +3,12 @@ package dblogic
 import (
 	osql "database/sql"
 	"fmt"
+	"reflect"
+	"strings"
+
 	"github.com/jinzhu/gorm"
 	"github.com/store_server/dbtools/driver"
 	"github.com/store_server/logger"
-	"reflect"
-	"strings"
 )
 
 //base driver

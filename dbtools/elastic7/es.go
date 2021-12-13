@@ -4,9 +4,6 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"github.com/olivere/elastic/v7"
-	"github.com/store_server/logger"
-	"github.com/store_server/utils/common"
 	"net"
 	"net/http"
 	"net/url"
@@ -14,6 +11,10 @@ import (
 	"strings"
 	"sync"
 	"time"
+
+	"github.com/olivere/elastic/v7"
+	"github.com/store_server/logger"
+	"github.com/store_server/utils/common"
 )
 
 const (

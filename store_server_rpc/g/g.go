@@ -2,11 +2,12 @@ package g
 
 import (
 	"fmt"
-	"github.com/store_server/store_server_rpc/conf"
-	"github.com/store_server/utils/common"
 	"gopkg.in/yaml.v2"
 	"os"
 	"sync"
+
+	"github.com/store_server/store_server_rpc/conf"
+	"github.com/store_server/utils/common"
 )
 
 var (

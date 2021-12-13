@@ -3,11 +3,12 @@ package rest
 import (
 	"context"
 	"fmt"
-	"github.com/store_server/utils/ctxutil"
-	"github.com/store_server/utils/errors"
 	"net/http"
 	"net/url"
 	"time"
+
+	"github.com/store_server/utils/ctxutil"
+	"github.com/store_server/utils/errors"
 )
 
 type TraceOption struct {

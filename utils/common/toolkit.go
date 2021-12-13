@@ -5,8 +5,6 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/getsentry/sentry-go"
-	"github.com/store_server/logger"
 	"math/rand"
 	"net"
 	"os"
@@ -16,6 +14,9 @@ import (
 	"sync"
 	"time"
 	"unsafe"
+
+	"github.com/getsentry/sentry-go"
+	"github.com/store_server/logger"
 )
 
 func UnmarshalWithNumber(data []byte, v interface{}) error {

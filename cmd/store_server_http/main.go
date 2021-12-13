@@ -3,14 +3,16 @@ package main
 import (
 	"flag"
 	"fmt"
+	"os"
+	"time"
+
 	"github.com/getsentry/sentry-go"
-	log "github.com/store_server/logger"
 	"github.com/store_server/store_server_http/g"
 	"github.com/store_server/store_server_http/http"
 	"github.com/store_server/utils"
 	"github.com/store_server/utils/common"
-	"os"
-	"time"
+
+	log "github.com/store_server/logger"
 )
 
 var (

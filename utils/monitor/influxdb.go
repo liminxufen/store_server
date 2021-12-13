@@ -2,8 +2,9 @@ package monitor
 
 import (
 	"context"
-	client "github.com/influxdata/influxdb-client-go/v2"
 	"sync"
+
+	client "github.com/influxdata/influxdb-client-go/v2"
 )
 
 //influx driver
